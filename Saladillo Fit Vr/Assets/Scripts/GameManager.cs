@@ -13,19 +13,19 @@ public static class GameManager
     
     // Variable que almacena el nombre del cliente
     public static string nombre;
+    
+    // Variable que almacena el entrenamiento seleccionado
+    public static int training;
 
     // Constante con la URL de la web API para comprobar la conectividad
-
     public const string WEB_API_CHECK_CONNECTIVITY =
         "http://{0}/SaladilloFitVR/api/SaladilloFitVR/CheckConnectivity";
 
     // Constante con la URL de la web API para obtener el nombre de un cliente
-
     public const string WEB_API_GET_CLIENT_NAME =
-        "http://{0}/Saladillo Fit VR/api/SaladilloFitVR/GetClientName?dni={1}";
+        "http://{0}/SaladilloFitVR/api/SaladilloFitVR/GetClientName?dni={1}";
 
     // Constante con la URL de la web API para obtener el entrenamiento
-
     public const string WEB_API_GET_TRAINING =
         "http://{0}/SaladilloFitVR/api/SaladilloFitVR/GetTraining?training={1}";
 

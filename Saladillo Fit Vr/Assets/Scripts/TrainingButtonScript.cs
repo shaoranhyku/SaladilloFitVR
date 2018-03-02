@@ -10,6 +10,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Networking;
+using UnityEngine.UI;
 
 public class TrainingButtonScript : MonoBehaviour
 {
@@ -62,9 +63,37 @@ public class TrainingButtonScript : MonoBehaviour
             if (!www.isNetworkError)
             {
                 // Se recupera el entrenamiento
-                Training training = JsonUtility.FromJson<Training>(www.downloadHandler.text);
+                ExercisesList exercisesList = JsonUtility.FromJson<ExercisesList>(www.downloadHandler.text);
                 
-                // TODO: CREAR LOS ITEMS Y COLOCARLOS
+                // Destruye todos os hijos
+                foreach (Transform child in detail.transform) {
+                    Destroy(child.gameObject);
+                }
+                
+                // Crea los objetos y los coloca
+                
+                // Se crea el objeto para el titulo
+                GameObject title = Instantiate(trainingItem);
+                // Se asigna el texto que debe mostrar
+                title.GetComponentInChildren<Text>().text = String.Format("Ejercicio {0}", trainingNumber.ToString());
+                // Se establece su padre que este en la escena
+                title.transform.SetParent(detail.transform);
+                // Se posiciona en la escena
+                title.GetComponent<RectTransform>().localPosition = new Vector3(0, -0.5f, 0);
+                
+                for (int i = 0; i < exercisesList.training.Length; i++)
+                {
+                    // Se crea el objeto para un ejercicio
+                    GameObject newTrainingItem = Instantiate(trainingItem);
+                    // Se asigna el texto que debe mostrar
+                    newTrainingItem.GetComponentInChildren<Text>().text = exercisesList.training[i].machine;
+                    // Se establece su padre que este en la escena
+                    newTrainingItem.transform.SetParent(detail.transform);
+                    // Se posiciona en la escena
+                    newTrainingItem.GetComponent<RectTransform>().localPosition = new Vector3(0, -0.5f * (i+2), 0);
+                }
+
+                GameManager.training = trainingNumber;
             }
         }
     }
@@ -72,11 +101,16 @@ public class TrainingButtonScript : MonoBehaviour
     #region Entidades
 
     [Serializable]
-    public class Training
+    public class ExercisesList
     {
-        public string exercise1;
-        public string exercise2;
-        public string exercise3;
+        public Exercise[] training;
+    }
+    
+    [Serializable]
+    public class Exercise
+    {
+        public int training;
+        public string machine;
     }
 
     #endregion

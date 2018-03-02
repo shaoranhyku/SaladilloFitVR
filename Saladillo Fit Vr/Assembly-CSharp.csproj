@@ -168,10 +168,12 @@
     <Compile Include="Assets\Scripts\ConfirmationScript.cs" />
     <Compile Include="Assets\Scripts\CustomPointerTimer.cs" />
     <Compile Include="Assets\Scripts\DeleteNumberScript.cs" />
+    <Compile Include="Assets\Scripts\ExitScript.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
     <Compile Include="Assets\Scripts\MoveJoystick.cs" />
     <Compile Include="Assets\Scripts\MovementDisc.cs" />
     <Compile Include="Assets\Scripts\SaveScript.cs" />
+    <Compile Include="Assets\Scripts\StartTrainingScript.cs" />
     <Compile Include="Assets\Scripts\TrainingButtonScript.cs" />
     <None Include="Assets\ProCore\ProBuilder\Shader\pb_TransparentOverlay.shader" />
     <None Include="Assets\ProCore\ProBuilder\API Examples\Icosphere FFT\README.txt" />
@@ -237,17 +239,17 @@
     <Reference Include="UnityEngine.SpatialTracking">
       <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnitySpatialTracking/RuntimeEditor/UnityEngine.SpatialTracking.dll</HintPath>
     </Reference>
-    <Reference Include="UnityEngine.Analytics">
-      <HintPath>C:/Users/AndroidConFran/AppData/LocalLow/Unity/cache/packages/packages.unity.com/com.unity.analytics@1.0.1/UnityEngine.Analytics.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.Purchasing">
-      <HintPath>C:/Users/AndroidConFran/AppData/LocalLow/Unity/cache/packages/packages.unity.com/com.unity.purchasing@1.0.1/UnityEngine.Purchasing.dll</HintPath>
-    </Reference>
     <Reference Include="Google.ProtocolBuffers">
       <HintPath>B:/Unity/SaladilloFitVR/Saladillo Fit Vr/Assets/GoogleVR/Plugins/Google.ProtocolBuffers.dll</HintPath>
     </Reference>
     <Reference Include="ProBuilderCore-Unity5">
       <HintPath>B:/Unity/SaladilloFitVR/Saladillo Fit Vr/Assets/ProCore/ProBuilder/Classes/ProBuilderCore-Unity5.dll</HintPath>
+    </Reference>
+    <Reference Include="ProBuilderMeshOps-Unity5">
+      <HintPath>B:/Unity/SaladilloFitVR/Saladillo Fit Vr/Assets/ProCore/ProBuilder/Classes/ProBuilderMeshOps-Unity5.dll</HintPath>
+    </Reference>
+    <Reference Include="KdTreeLib">
+      <HintPath>B:/Unity/SaladilloFitVR/Saladillo Fit Vr/Assets/ProCore/ProBuilder/Classes/ClassesLib/KdTreeLib.dll</HintPath>
     </Reference>
     <Reference Include="pb_Stl">
       <HintPath>B:/Unity/SaladilloFitVR/Saladillo Fit Vr/Assets/ProCore/ProBuilder/Classes/ClassesLib/pb_Stl.dll</HintPath>
@@ -255,11 +257,11 @@
     <Reference Include="Poly2Tri">
       <HintPath>B:/Unity/SaladilloFitVR/Saladillo Fit Vr/Assets/ProCore/ProBuilder/Classes/ClassesLib/Poly2Tri.dll</HintPath>
     </Reference>
-    <Reference Include="ProBuilderMeshOps-Unity5">
-      <HintPath>B:/Unity/SaladilloFitVR/Saladillo Fit Vr/Assets/ProCore/ProBuilder/Classes/ProBuilderMeshOps-Unity5.dll</HintPath>
+    <Reference Include="UnityEngine.Analytics">
+      <HintPath>C:/Users/AndroidConFran/AppData/LocalLow/Unity/cache/packages/packages.unity.com/com.unity.analytics@1.0.1/UnityEngine.Analytics.dll</HintPath>
     </Reference>
-    <Reference Include="KdTreeLib">
-      <HintPath>B:/Unity/SaladilloFitVR/Saladillo Fit Vr/Assets/ProCore/ProBuilder/Classes/ClassesLib/KdTreeLib.dll</HintPath>
+    <Reference Include="UnityEngine.Purchasing">
+      <HintPath>C:/Users/AndroidConFran/AppData/LocalLow/Unity/cache/packages/packages.unity.com/com.unity.purchasing@1.0.1/UnityEngine.Purchasing.dll</HintPath>
     </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

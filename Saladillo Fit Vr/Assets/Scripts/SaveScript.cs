@@ -21,6 +21,9 @@ public class SaveScript : MonoBehaviour
 
     // Objeto que representa el panel de cliente
     public GameObject clientPanel;
+    
+    // Objeto que representa el panel de entrenamientos
+    public GameObject trainingPanel;
 
     // Objeto con la dirección IP controducida por el usuario
     public Text ipAddress;
@@ -73,7 +76,10 @@ public class SaveScript : MonoBehaviour
             connected.SetActive(www.responseCode == 200);
             disconnected.SetActive(!connected.activeSelf);
             clientPanel.SetActive(www.responseCode == 200);
-            
+            if (www.responseCode != 200)
+            {
+                trainingPanel.SetActive(false);
+            }
         }
     }
 }

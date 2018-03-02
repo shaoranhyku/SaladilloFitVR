@@ -8,6 +8,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Text.RegularExpressions;
 using UnityEngine;
 using UnityEngine.Networking;
 using UnityEngine.UI;
@@ -32,7 +33,7 @@ public class ConfirmationScript : MonoBehaviour
     /// </remarks>
     public void Click()
     {
-        // Se obtiene la dirección IP introducida por el usuario
+        // Se obtiene el DNI introducido por el cliente
         GameManager.dni = dni.GetComponent<Text>().text;
 
         // Intenta obtener el cliente
@@ -67,13 +68,14 @@ public class ConfirmationScript : MonoBehaviour
             if (!www.isNetworkError)
             {
                 // Se recupera el cliente
-                Client client = JsonUtility.FromJson<Client>(www.downloadHandler.text);
+                String client = www.downloadHandler.text;
+                client = Regex.Replace(client, "\"", "");
 
                 // Se comprueba que se ha devuelto un usuario
-                if (String.IsNullOrEmpty(client.nombre))
+                if (!String.IsNullOrEmpty(client))
                 {
                     // Se guarda el nombre del cliente
-                    GameManager.nombre = client.nombre;
+                    GameManager.nombre = client;
 
                     // Se cambia el texto del dni por el nombre del cliente
                     dni.GetComponent<Text>().text = GameManager.nombre;
@@ -95,15 +97,4 @@ public class ConfirmationScript : MonoBehaviour
             }
         }
     }
-
-    #region Entidades
-
-    [Serializable]
-    public class Client
-    {
-        public string dni;
-        public string nombre;
-    }
-
-    #endregion
 }

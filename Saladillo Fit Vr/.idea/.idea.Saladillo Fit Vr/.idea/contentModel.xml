@@ -366,10 +366,12 @@
           <e p="ConfirmationScript.cs" t="Include" />
           <e p="CustomPointerTimer.cs" t="Include" />
           <e p="DeleteNumberScript.cs" t="Include" />
+          <e p="ExitScript.cs" t="Include" />
           <e p="GameManager.cs" t="Include" />
           <e p="MoveJoystick.cs" t="Include" />
           <e p="MovementDisc.cs" t="Include" />
           <e p="SaveScript.cs" t="Include" />
+          <e p="StartTrainingScript.cs" t="Include" />
           <e p="TrainingButtonScript.cs" t="Include" />
         </e>
       </e>
